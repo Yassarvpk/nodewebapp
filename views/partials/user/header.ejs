@@ -9,31 +9,71 @@
 	<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="/css/icomoon.css">
 	<!-- Ion Icon Fonts-->
-	<link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="/css/ionicons.min.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
 
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="/css/magnific-popup.css">
 
 	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="/css/flexslider.css">
 
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
 	
 	<!-- Date Picker -->
-	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/css/bootstrap-datepicker.css">
 	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+	<style>
+		.user-dropdown {
+  		position: relative;
+		}
+
+		.user-dropdown-menu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			min-width: 160px;
+			background: #fff;
+			box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+			z-index: 1000;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			border-radius: 6px;
+			overflow: hidden;
+		}
+
+		.user-dropdown:hover .user-dropdown-menu {
+			display: block;
+		}
+
+		.user-dropdown-menu li a {
+			display: block;
+			padding: 10px 15px;
+			text-decoration: none;
+			color: #333;
+			background: #fff;
+		}
+
+		.user-dropdown-menu li a:hover {
+			background-color: #f1f1f1;
+		}
+
+
+	</style>
 
 	</head>
 	<body>
@@ -74,6 +114,19 @@
 								<li><a href="women.html">Women</a></li>
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
+								<% if (user) { %>
+								<li class="user-dropdown">
+									<a href="#" class="sign-in-link"><%= user.name %> <i class="icon-chevron-down"></i></a>
+									<ul class="user-dropdown-menu">
+										<li><a href="/userProfile">Profile</a></li>
+										<li><a href="/logout">Logout</a></li>
+									</ul>
+								</li>
+								<% } else { %>
+									<li><a href="/signup" class="sign-in-link">Sign Up</a></li>
+									<li><a href="/login" class="sign-in-link">Log in</a></li>
+								<% } %>
+
 								<li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
 							</ul>
 						</div>
