@@ -45,6 +45,15 @@
       text-align: center;
       margin-top: 1rem;
     }
+    .forgot-password-link {
+      font-size: 0.875rem;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .forgot-password-link:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -61,6 +70,10 @@
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" name="password" class="form-control" id="password" required />
+    </div>
+    <div class="form-group d-flex justify-content-end">
+      <a href="/forgot-password" class="forgot-password-link ms-auto">Forgot Password</a>
+
     </div>
     <% if (typeof message !== 'undefined' && message.length > 0) { %>
       <div class="alert alert-danger text-center">

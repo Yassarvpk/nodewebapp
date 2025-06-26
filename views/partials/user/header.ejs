@@ -114,7 +114,7 @@
 								<li><a href="women.html">Women</a></li>
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
-								<% if (user) { %>
+								<% if (typeof user !== 'undefined' && user) { %>
 								<li class="user-dropdown">
 									<a href="#" class="sign-in-link"><%= user.name %> <i class="icon-chevron-down"></i></a>
 									<ul class="user-dropdown-menu">
@@ -156,3 +156,4 @@
 				</div>
 			</div>
 		</nav>
+
